@@ -1,7 +1,7 @@
 .{
     .name = .flibc,
     .version = "1.11.0",
-    .fingerprint = 0xa3c8e1f5b27d4e09,
+    .fingerprint = 0x65d6f423457a5291,
     .minimum_zig_version = "0.14.0",
     .paths = .{
         "build.zig",
