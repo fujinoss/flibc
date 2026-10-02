@@ -14,8 +14,16 @@ pub fn build(b: *std.Build) void {
 
     const c_sources = [_][]const u8{
         "io/write.c",
+        "io/read.c",
+        "io/open.c",
+        "io/openat.c",
+        "io/close.c",
+        "io/lseek.c",
         "misc/errno.c",
         "misc/stack_chk.c",
+        "posix/process/getpid.c",
+        "posix/fs/chdir.c",
+        "posix/fs/getcwd.c",
         "stdlib/exit/exit.c",
         "stdlib/exit/_exit.c",
         "stdio-common/printf/printf.c",
