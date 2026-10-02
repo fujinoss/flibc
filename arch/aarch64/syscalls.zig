@@ -568,3 +568,31 @@ test "clock_gettime monotonic" {
     try clock_gettime(CLOCK_MONOTONIC, &ts);
     try std.testing.expect(ts.sec > 0);
 }
+
+export fn __flibc_syscall0(n: usize) isize {
+    return syscall0(n);
+}
+
+export fn __flibc_syscall1(n: usize, a1: usize) isize {
+    return syscall1(n, a1);
+}
+
+export fn __flibc_syscall2(n: usize, a1: usize, a2: usize) isize {
+    return syscall2(n, a1, a2);
+}
+
+export fn __flibc_syscall3(n: usize, a1: usize, a2: usize, a3: usize) isize {
+    return syscall3(n, a1, a2, a3);
+}
+
+export fn __flibc_syscall4(n: usize, a1: usize, a2: usize, a3: usize, a4: usize) isize {
+    return syscall4(n, a1, a2, a3, a4);
+}
+
+export fn __flibc_syscall5(n: usize, a1: usize, a2: usize, a3: usize, a4: usize, a5: usize) isize {
+    return syscall5(n, a1, a2, a3, a4, a5);
+}
+
+export fn __flibc_syscall6(n: usize, a1: usize, a2: usize, a3: usize, a4: usize, a5: usize, a6: usize) isize {
+    return syscall6(n, a1, a2, a3, a4, a5, a6);
+}
