@@ -92,4 +92,20 @@ pub fn build(b: *std.Build) void {
     });
 
     b.installArtifact(lib);
+
+    const test_module = b.createModule(.{
+        .root_source_file = b.path("arch/aarch64/syscalls.zig"),
+        .target = target,
+        .optimize = optimize,
+    });
+
+    const tests = b.addTest(.{
+        .root_module = test_module,
+    });
+
+    const install_tests = b.addInstallArtifact(tests, .{
+        .dest_dir = .{ .override = .{ .custom = "bin" } },
+    });
+    const test_step = b.step("test-bin", "Build the test binary (run it manually)");
+    test_step.dependOn(&install_tests.step);
 }
